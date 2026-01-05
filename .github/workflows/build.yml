@@ -30,6 +30,7 @@ jobs:
           mkdir -p device/samsung/gta4xlwifi
           cp -r devicetree/* device/samsung/gta4xlwifi/
           rm -rf device/xiaomi/joyeuse/.git
+          ls -R device/samsung/gta4xlwifi/ #debug
       - name: Compile
         run: |
           export ALLOW_MISSING_DEPENDENCIES=true
