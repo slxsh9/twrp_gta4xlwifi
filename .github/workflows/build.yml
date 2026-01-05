@@ -34,7 +34,7 @@ jobs:
         run: |
           export ALLOW_MISSING_DEPENDENCIES=true
           source build/envsetup.sh
-          lunch twrp_gta4xlwifi-eng
+          lunch omni_gta4xlwifi-eng
           mka recoveryimage
       - name: Upload
         uses: actions/upload-artifact@v4
