@@ -10,6 +10,10 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install git-core gnupg flex bison repo
+          mkdir -p ~/.bin
+          export PATH="${HOME}/.bin:${PATH}"
+          curl https://storage.googleapis.com/git-repo-downloads/repo > ~/.bin/repo
+          chmod a+rx ~/.bin/repo
       - name: Download
         run: |
           repo init -u https://github.com/minimal-manifest-twrp/platform_manifest_twrp_aosp.git -b twrp-12.1
