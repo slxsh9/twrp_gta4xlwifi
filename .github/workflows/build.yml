@@ -3,18 +3,18 @@ on: [push]
 jobs:
   build:
     runs-on: ubuntu-latest
-      steps:
-        - name: Checkout
-          uses: actions/checkout@v2
-        - name: Install tools
-          run: |
-            sudo apt-get update
-            sudo apt-get install git-core gnupg flex bison gpref repo
-        - name: Download
-          run: |
-            repo init -u https://github.com/minimal-manifest-twrp/platform_manifest_twrp_aosp.git -b twrp-12.1
-            repo sync
-        - name: Compile
-          run: |
-            export ALLOW_MISSING_DEPENDENCIES=true
-            mka recoveryimage
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Install tools
+        run: |
+          sudo apt-get update
+          sudo apt-get install git-core gnupg flex bison gpref repo
+      - name: Download
+        run: |
+          repo init -u https://github.com/minimal-manifest-twrp/platform_manifest_twrp_aosp.git -b twrp-12.1
+          repo sync
+      - name: Compile
+        run: |
+          export ALLOW_MISSING_DEPENDENCIES=true
+          mka recoveryimage
