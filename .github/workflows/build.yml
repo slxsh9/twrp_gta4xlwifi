@@ -25,9 +25,19 @@ jobs:
         run: |
           repo init -u https://github.com/minimal-manifest-twrp/platform_manifest_twrp_aosp.git -b twrp-12.1 --depth=1
           repo sync -c -j8 --force-sync --no-clone-bundle --no-tags
+      - name: Setup DT
+        run: |
+          mkdir -p device/samsung/gta4xlwifi
+          cp -r devicetree/* device/samsung/gta4xlwifi/
+          rm -rf device/xiaomi/joyeuse/.git
       - name: Compile
         run: |
           export ALLOW_MISSING_DEPENDENCIES=true
           source build/envsetup.sh
-          lunch --help
-          #mka recoveryimage
+          lunch twrp_gta4xlwifi-eng
+          mka recoveryimage
+      - name: Upload
+        uses: actions/upload-artifact@v3
+        with:
+          name: TWRP-Recovery
+          path: out/target/product/gta4xlwifi/recovery.img
