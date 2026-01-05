@@ -28,6 +28,8 @@ TARGET_2ND_CPU_ABI      := armeabi-v7a
 TARGET_2ND_CPU_ABI2     := armeabi
 TARGET_2ND_CPU_VARIANT  := cortex-a53
 
+TARGET_SUPPORTS_64_BIT_APPS := true
+
 # KERNEL
 
 TARGET_PREBUILT_KERNEL       := $(DEVICE_PATH)/blobs/kernel
