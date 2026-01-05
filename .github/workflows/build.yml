@@ -37,7 +37,7 @@ jobs:
           lunch twrp_gta4xlwifi-eng
           mka recoveryimage
       - name: Upload
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: TWRP-Recovery
           path: out/target/product/gta4xlwifi/recovery.img
