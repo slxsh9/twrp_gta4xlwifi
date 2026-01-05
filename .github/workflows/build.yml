@@ -31,6 +31,13 @@ jobs:
           cp -r devicetree/* device/samsung/gta4xlwifi/
           rm -rf device/xiaomi/joyeuse/.git
           ls -R device/samsung/gta4xlwifi/ #debug
+      - name: Enable swap
+        run: |
+          sudo fallocate -l 12G /swapfile
+          sudo chmod 600 /swapfile
+          sudo mkswap /swapfile
+          sudo swapon /swapfile
+          sudo swapon --show
       - name: Compile
         run: |
           export ALLOW_MISSING_DEPENDENCIES=true
