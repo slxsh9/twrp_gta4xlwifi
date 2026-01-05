@@ -1,5 +1,5 @@
 $(call inherit-product, $(SRC_TARGET_DIR)/product/base.mk)
-$(call inherit-product, vendor/omni/common/common.mk)
+$(call inherit-product, vendor/twrp/config/common.mk)
 
 PRODUCT_NAME := omni_gta4xlwifi
 PRODUCT_DEVICE := gta4xlwifi
