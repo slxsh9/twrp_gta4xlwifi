@@ -25,7 +25,9 @@ jobs:
         run: |
           repo init -u https://github.com/minimal-manifest-twrp/platform_manifest_twrp_aosp.git -b twrp-12.1 --depth=1
           repo sync -c -j8 --force-sync --no-clone-bundle --no-tags
-      #- name: Compile
-      #  run: |
-      #    export ALLOW_MISSING_DEPENDENCIES=true
-      #    mka recoveryimage
+      - name: Compile
+        run: |
+          export ALLOW_MISSING_DEPENDENCIES=true
+          source build/envsetup.sh
+          lunch --help
+          #mka recoveryimage
