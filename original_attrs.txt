@@ -1,0 +1,20 @@
+boot magic: ANDROID!
+kernel_size: 32036876
+kernel load address: 0x10008000
+ramdisk size: 13979525
+ramdisk load address: 0x11000000
+second bootloader size: 0
+second bootloader load address: 0x00000000
+kernel tags load address: 0x10000100
+page size: 2048
+os version: 13.0.0
+os patch level: 2025-04
+boot image header version: 2
+product name: SRPSL20A007RU
+command line args: androidboot.selinux=permissive androidboot.selinux=permissive loop.max_part=7
+additional command line args:
+recovery dtbo size: 479276
+recovery dtbo offset: 0x0000000002be3800
+boot header size: 1660
+dtb size: 135256
+dtb address: 0x0000000010000000
